@@ -1,0 +1,356 @@
+@mixin layout() {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+ }
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+  
+body {
+  font-family: $mainFont;
+  font-weight: normal;
+  line-height: 1.5;
+}
+  
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+// header styles
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: $background;
+}  
+
+.header__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: center; 
+  height: 60px;
+  padding: 0 3%;
+
+  .navbar {
+    display: flex;
+    align-items: center;
+
+    .sandwich {
+      display: none;
+    }
+
+    .menu {
+      width: 100%;
+      display: grid;
+      grid-template-columns: auto auto auto auto auto;
+      justify-content: space-between;
+      list-style-type: none;
+      font-size: 80%;
+    }
+  }
+}
+
+// general styles
+.link {
+  text-decoration: none;
+}
+
+.menu__link {
+  color: $dark;
+}
+
+.mobile-menu-wrapper {
+  display: none;
+} 
+
+.section-heading {
+  font-size: 300%;
+  line-height: 54px;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.button {
+  width: 210px;
+  height: 38px;
+  font-size: 17px;
+  background-color: $primary;
+  color: $background;
+  border: 2px solid $primary;
+  border-radius: 5px;
+}
+  
+// relationships styles
+.relationships {
+  @include layout();
+  align-content: center; 
+  background-image: $backgroundImage;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: $background;
+  min-height: 488px;
+  padding: 5.5% 3%;
+}
+  
+.relationships-text {
+  width: 54%;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-row-gap: 10px;
+}
+  
+.relationships-text__body {
+  margin-bottom: 25px;
+}
+  
+.relationships-text__link {
+  color: $background;
+}
+
+// requirements styles
+.requirements {
+  min-height: 520px;
+  padding: 15% 3% 5% 3%;
+
+  .requirements__header {
+    text-align: center;
+    margin-bottom: 4.5%;
+  }
+
+  .requirements__inner {
+    display: grid;
+    grid-template-columns: 1fr 1.45fr;
+    grid-column-gap: 3%;
+
+    .image-container {
+      display: flex;
+      align-items: flex-start;
+      margin-top: 6%;
+      margin-left: 6%;
+  
+      .requirements__image {
+        width: 100%;
+        max-width: 340px;
+      }
+    }
+
+    .requirements__text p {
+      margin-bottom: 25px;
+      text-align: justify;
+    }
+
+    .requirements__button {
+      background-color: $background;
+      border: 2px solid $background;
+      text-align: left;
+
+      .requirements__link {
+        color: $primary;
+      }
+    }
+  }
+}
+
+// users' styles
+.users {
+  @include layout();
+  grid-template-rows: auto 100px auto auto;
+  grid-row-gap: 10px;
+  position: relative;
+  min-height: 900px;
+  padding: 7% 2% 10% 2%;
+  background-color: $background2;
+  text-align: center;
+
+  .users__header {
+    align-self: flex-end;
+  }
+
+  .users__subheader {
+    margin-top: 7px;
+    margin-bottom: 0;
+  }
+
+  .users__info {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 3%;
+    grid-row-gap: 5%;
+    
+    .user {
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-items: center; 
+  
+      .user__image {
+        border-radius: 50%;
+      }
+      .user__name {
+        margin: 10px 0;
+      }
+  
+      & h2, p {
+        max-width: 180px;
+        margin: 0;
+        text-align: center;
+        overflow: hidden; 
+        text-overflow: ellipsis;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .users__button {
+    justify-self: center;
+    align-self: center;
+  }
+}
+  
+// signup styles
+.signup {
+  width: 50%;
+  padding: 10% 3%;
+  margin: 0 auto;
+
+  .signup__header {
+    text-align: center;
+  }
+
+  .signup__inner {
+    width: 90%;
+    margin: 0 auto;
+
+    .signup__subheader {
+      text-align: center;
+      margin-top: 15px;
+      margin-bottom: 8%;
+    }
+
+    label {
+      font-size: 14px;
+    }
+
+    .input {
+      border: 1px solid $border;
+      border-radius: 3px;
+    }
+
+    .signup__button {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}
+  
+.form__top {
+  & input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 40px;
+    margin-top: 5px;
+    padding-left: 2%;
+    &:not([type="phone"]) {
+      margin-bottom: 20px;
+    }
+    &[type="phone"] {
+      margin-bottom: 3px;
+    }
+  }
+  & span {
+    font-size: 12px;
+  }
+}
+  
+.form__bottom {
+  .photo-heading {
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 8px;
+  }
+
+  & input {
+    margin-bottom: 12px;
+    font-size: 16px;
+  }
+
+  .input-container {
+    display: flex;
+    width: 100%;
+    margin-bottom: 7%;
+  
+    .input-unreal {
+      display: inline-block;
+      width: 83%;
+      height: 33px;
+      padding: 1px 1px 1px 2%;
+    }
+  
+    input[type="file"] {
+      width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+    }
+  
+    input[type="file"] + label {
+      display: inline-block;
+      width: 17%;
+      height: 33px;
+      line-height: 33px;
+      padding: 1px;
+      text-align: center;
+      background-color: $background2;
+    }
+  } 
+}
+  
+// Modal Window
+.modalWindow {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  bottom: 0;
+  left: 0;
+  background: rgba(145, 145, 145, 0.533);
+  z-index: 2;
+
+  .modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 30%;
+    padding: 3%;
+    background-color: $background;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 15px;
+    border-radius: 3px;
+
+    .modal__heading {
+      margin: 0px;
+  
+      & span {
+        position: absolute;
+        right: 5%;
+        cursor: pointer;
+      }
+    }
+
+    .modal__button {
+      justify-self: end;
+      width: 20%;
+    }
+  }
+}

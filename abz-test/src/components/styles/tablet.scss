@@ -1,0 +1,120 @@
+@media screen and (max-width: 992px) {
+  //mobile menu styles 
+  .cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(145, 145, 145, 0.533);
+    z-index: 50;
+  }
+  
+  .mobile-menu-wrapper {
+    display: block;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: $background;
+    width: 70vw;
+    padding-top: 2%;
+    padding-left: 3%;
+    transition: 0.5s;
+
+    .mobile-menu {
+      display: block;
+      list-style-type: none;
+      padding-left: 0;
+
+      & li {
+        margin: 5% 0;
+      }
+    }
+  }
+
+  // header 
+  .header__inner {
+      .navbar {
+      justify-content: flex-end;
+
+      .sandwich {
+        display: block;
+        cursor: pointer;
+      }
+  
+      .menu {
+        display: none;
+      }
+    }
+  }   
+
+  // general styles
+  .section-heading {
+    font-size: 250%;
+    line-height: 45px;
+    margin-top: 15px;
+  }
+  
+  //relationships section
+  .relationships {
+    min-height: 415px;
+    padding: 5.5% 4%;
+
+    .relationships-text {
+      width: 60%;
+    }
+  }
+      
+  //requirenments section
+  .requirements {
+    min-height: 503px;
+    padding: 13% 3% 5% 3%;
+
+    .requirements__inner {
+      grid-template-columns: 1fr 1.65fr;
+
+      .image-container {
+        margin-top: 9%;
+        margin-left: 3%;
+  
+        .requirements__image {
+          max-width: 250px;
+        }
+      }
+    }
+  }  
+
+  // users' section
+  .users__header {
+    margin-top: 35px;
+  }
+  
+  .users__subheader {
+    margin-bottom: 10%;
+  }
+  
+  .user__image {
+    width: 100%;
+    max-width: 70px;
+  }
+  
+  // signup section
+  .signup {
+    width: 69%;
+    padding: 10% 3% 10% 6%;
+
+    .signup__header {
+      margin-top: 35px;
+    }
+
+    .signup__subheader {
+      margin-bottom: 6%;
+    }
+
+    .form__top input:not([type="phone"]) {
+      margin-bottom: 4%;
+    }
+  }
+}

@@ -1,0 +1,77 @@
+@media screen and (max-width: 576px) {
+  // header
+  .header__inner {
+    height: 40px;
+  }
+  
+  // general settings
+  .section-heading {
+    font-size: 190%;
+    line-height: 35px;
+  }
+
+  .button {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  // relationships section 
+  .relationships {
+    min-height: 360px;
+    text-align: center;
+
+    .relationships-text {
+      width: 100%;
+
+      .relationships-text__body2 {
+        display: none;
+      }
+
+      .relationships-text__button {
+        justify-self: center;
+      }
+    }
+  }
+
+  // requirenments section
+  .requirements {
+    min-height: 790px;
+
+    .image-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 0;
+      margin-left: 0;
+
+      .requirements__image {
+        text-align: center;
+      }
+    }
+
+    .requirements__inner {
+      display: block;
+
+      .requirements__text h2 {
+        text-align: center;
+      }
+
+      .requirements__button {
+        text-align: center;
+      }
+    }
+  }
+  
+  // users' section   
+  .users {
+    .users__info { 
+      grid-template-columns: 1fr;
+      grid-row-gap: 2%;
+      margin-bottom: 40%;;
+    }
+  }
+
+  // signup section
+  .signup {
+    width: 90%;
+  }
+}
